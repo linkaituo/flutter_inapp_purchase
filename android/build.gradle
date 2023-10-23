@@ -2,19 +2,19 @@ group 'com.dooboolab.flutterinapppurchase'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.10'
+    ext.kotlin_version = '1.6.10'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:7.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-rootProject.allprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
@@ -27,25 +27,20 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 31
 
-    defaultConfig {
-        minSdkVersion 21
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-    lintOptions {
-        disable 'InvalidPackage'
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-}
 
-dependencies {
-    implementation 'com.android.billingclient:billing:5.1.0'
-    implementation files('jars/in-app-purchasing-2.0.76.jar')
-    implementation 'androidx.annotation:annotation:1.6.0'
-}
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+}
