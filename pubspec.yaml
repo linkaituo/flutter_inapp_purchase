@@ -28,8 +28,8 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.dooboolab.flutterinapppurchase
-        pluginClass: FlutterInappPurchasePlugin
-        mainClass: FlutterInappPurchasePlugin
+        package: com.linkaituo.flutter_plugin_test_inapp_purchase
+        pluginClass: FlutterPluginTestPlugin
+        # mainClass: FlutterInappPurchasePlugin
       ios:
         pluginClass: FlutterInappPurchasePlugin
